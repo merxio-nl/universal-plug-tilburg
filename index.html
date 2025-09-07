@@ -1,53 +1,290 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Universal Plug – Tilburg edition</title>
-  <link rel="icon" href="plug-main.png" type="image/png">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Universal Plug — Tilburg edition</title>
+<link rel="icon" href="plug-main.png" type="image/png">
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-266XDBZ1JT"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-266XDBZ1JT');
-  </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-266XDBZ1JT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-266XDBZ1JT');
+</script>
 
-  <style>
-    body {
-      background: #11151a;
-      color: #e8eef5;
-      font-family: system-ui, sans-serif;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
-    header {
-      background: #1b232c;
-      padding: 12px;
-      font-weight: 700;
-      color: #ff8080;
-    }
-    main {
-      padding: 40px 20px;
-    }
-    h1 {
-      font-size: 28px;
-    }
-    p {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-  </style>
+<style>
+:root {
+  --bg:#0c0f12; --card:#11151a; --text:#e8eef5; --muted:#9fb2c7;
+  --accent:#5cc8ff; --accent2:#67f3a2;
+}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,Inter,Roboto,Arial,sans-serif;line-height:1.6}
+a{color:var(--accent)} .wrap{max-width:1120px;margin:0 auto;padding:28px}
+header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.brand{display:flex;align-items:center;gap:10px}
+.brand img{width:40px;height:40px;border-radius:8px;object-fit:cover}
+.lang button{background:#11151a;border:1px solid var(--muted);color:var(--text);padding:4px 10px;border-radius:6px;cursor:pointer;margin-left:6px}
+.lang button.active{border-color:var(--accent2);color:var(--accent2)}
+section{background:var(--card);border:1px solid #1b232c;border-radius:16px;padding:22px;margin:22px 0}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:24px;align-items:center}
+.hero img{width:100%;border-radius:16px;background:#11151a}
+.hero .media{background:#11151a;border-radius:16px;padding:16px;}
+h2{font-size:42px;line-height:1.1;margin:0 0 8px}
+.lead{color:var(--muted)} .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:12px;border:1px solid transparent;cursor:pointer;font-weight:700;text-decoration:none}
+.btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#0a0a0a}
+.btn.ghost{border:1px solid #3a4b5c;color:#eaf2fb;background:#11151a}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+ul.bullets{margin:8px 0 0 0;padding-left:18px}
+.colors .swatch{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;margin:6px 6px 0 0;border:1px solid #25313d;background:#0d1318;border-radius:999px;cursor:pointer;color:#e8eef5}
+.swatch.active{border-color:var(--accent2);box-shadow:0 0 0 2px rgba(103,243,162,.35)}
+.dot{width:16px;height:16px;border-radius:50%;border:1px solid #0006}
+.dot.green{background:#59d44f} .dot.red{background:#ff4a4a} .dot.black{background:#111} .dot.blue{background:#2b6fff} .dot.purple{background:#8f5cff}
+.pricing{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:8px}
+.price-card{background:#0e1318;border:1px solid #1f2a34;border-radius:14px;padding:16px}
+.price{font-size:32px;font-weight:800;margin:8px 0}
+.muted{color:var(--muted)} footer{padding:6px 0 0;opacity:.9;font-size:12px;color:var(--muted)}
+/* Preview image inside Colors section - mobile only */
+.color-view{display:none;background:#11151a;border-radius:16px;padding:12px;margin-bottom:8px}
+.color-view img{width:100%;display:block;border-radius:12px;background:#11151a}
+@media(max-width:860px){.hero{grid-template-columns:1fr} h2{font-size:34px}}
+@media(max-width:540px){
+  .cta-row .btn{width:100%} .wrap{padding:18px} section{padding:18px;margin:16px 0}
+  .hero{display:flex;flex-direction:column;gap:12px}
+  .hero .muted:first-child{order:1}
+  .hero h2{order:2}
+  .hero .lead{order:3}
+  .hero .cta-row{order:4}
+  .hero .media{order:5}
+  .color-view{display:block}
+}
+</style>
 </head>
 <body>
-  <header>Только для своих · Тилбург и окрестности</header>
-  <main>
-    <h1>Термостойкий колпак для стандартных бутылок</h1>
-    <p>Прочный композит с металлической вставкой. Ровная тяга, не перегревается, легко чистится. 
-    Доставка по Нидерландам и ЕС.</p>
-  </main>
+<div class="wrap">
+<section style="background:#1b232c;border-radius:12px;padding:12px;margin:12px 0;text-align:center;font-weight:700;color:#ff8080">Только для своих · Тилбург и окрестности</section>
+
+  <header>
+    <div class="brand">
+      <img src="universal-plug-top.jpg" alt="Universal Plug">
+      <!-- Текстовый заголовок удалён по просьбе клиента -->
+    </div>
+    <div class="lang">
+      <button id="btn-ru" class="active">RU</button>
+      <button id="btn-ua">UA</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <span class="muted" data-i18n="strap">Классика, проверенная временем</span>
+      <h2 data-i18n="heroTitle">Термостойкий колпак для стандартных бутылок</h2>
+      <p class="lead" data-i18n="heroDesc">Прочный композит с металлической вставкой. Ровная тяга, не перегревается, легко чистится — отверстия можно быстро прочистить зубочисткой или иголочкой. Доставка по Нидерландам и ЕС.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="https://t.me/merxio_manager?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%20Universal%20Plug.%0A%D0%9A%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE%3A%20___%0A%D0%90%D0%B4%D1%80%D0%B5%D1%81%3A%20___%0A%D0%A3%D0%B4%D0%BE%D0%B1%D0%BD%D0%BE%D0%B5%20%D0%B2%D1%80%D0%B5%D0%BC%D1%8F%20%D0%B4%D0%BB%D1%8F%20%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B8%3A%20___" target="_blank" rel="noopener" data-i18n="ctaTg">Заказать в Telegram</a>
+        <a class="btn ghost" href="https://wa.me/0000000000" target="_blank" rel="noopener" data-i18n="ctaWa">Написать в WhatsApp</a>
+      </div>
+    </div>
+    <div class="media">
+      <img id="mainPhoto" src="plug-main.png" alt="Universal Plug — два колпака">
+    </div>
+  </section>
+
+  <section>
+    <div class="grid-2">
+      <div>
+        <h3 data-i18n="whyTitle">Почему это удобно</h3>
+        <ul class="bullets">
+          <li data-i18n="b1">Композит (пластик + стекловолокно) + металлическая вставка</li>
+          <li data-i18n="b2">Прочный и термостойкий: не перегревается, не обжигает руки</li>
+          <li data-i18n="b3">Без запаха при нагреве</li>
+          <li data-i18n="b4">Универсальный: надевается на стандартные ПЭТ-бутылки 0,5–2 л</li>
+          <li data-i18n="b5">Долговечный: сломать невозможно — можно только потерять</li>
+          <li data-i18n="b6">Легко чистится — отверстия можно быстро прочистить зубочисткой или иголкой</li>
+        </ul>
+      </div>
+      <div>
+        <h3 data-i18n="howTitle">Как использовать</h3>
+        <ul class="bullets">
+          <li data-i18n="h1">Возьмите чистую пластиковую бутылку 0,5–2 л с горлышком стандартного диаметра.</li>
+          <li data-i18n="h2">Наденьте Universal Plug на горлышко — посадка плотная и герметичная.</li>
+          <li data-i18n="h3">После использования при необходимости очистите отверстия зубочисткой или иголочкой.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="colors">
+    <h3 data-i18n="colorsTitle">Выберите цвет</h3>
+
+    <!-- Mobile-only preview -->
+    <div class="color-view">
+      <img id="colorPhoto" src="plug-green.png" alt="Предпросмотр выбранного цвета">
+    </div>
+
+    <div>
+      <button class="swatch active" data-img="plug-green.png"><span class="dot green"></span><span data-i18n="cGreen">Зелёный</span></button>
+      <button class="swatch" data-img="plug-red.png"><span class="dot red"></span><span data-i18n="cRed">Красный</span></button>
+      <button class="swatch" data-img="plug-black.png"><span class="dot black"></span><span data-i18n="cBlack">Чёрный</span></button>
+      <button class="swatch" data-img="plug-blue.png"><span class="dot blue"></span><span data-i18n="cBlue">Синий</span></button>
+      <button class="swatch" data-img="plug-purple.png"><span class="dot purple"></span><span data-i18n="cPurple">Фиолетовый</span></button>
+    </div>
+  </section>
+
+  <section>
+    <h3 data-i18n="priceTitle">Цены и доставка (Тилбург)</h3>
+    <div class="pricing">
+      <div class="price-card">
+        <div class="pill muted" data-i18n="p1name">Один колпак</div>
+        <div class="price">€10</div>
+        <p class="muted" data-i18n="p1ship">Доставку оплачивает клиент.</p>
+        <ul class="bullets">
+          <li data-i18n="p1nl">NL: PostNL €4,95 · 1–3 дня</li>
+          <li data-i18n="p1eu">EU: €8,99 · 3–7 дней</li>
+        </ul>
+        <div class="cta-row"><a class="btn primary" href="https://t.me/merxio_manager?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%20Universal%20Plug.%0A%D0%9A%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE%3A%20___%0A%D0%90%D0%B4%D1%80%D0%B5%D1%81%3A%20___%0A%D0%A3%D0%B4%D0%BE%D0%B1%D0%BD%D0%BE%D0%B5%20%D0%B2%D1%80%D0%B5%D0%BC%D1%8F%20%D0%B4%D0%BB%D1%8F%20%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B8%3A%20___" target="_blank" rel="noopener" data-i18n="orderTg">Оформить в Telegram</a></div>
+      </div>
+      <div class="price-card" style="border-color:#2b6;">
+        <div class="pill muted" data-i18n="p2name">Два колпака</div>
+        <div class="price">€16</div>
+        <p class="muted" data-i18n="p2ship">Доставка NL — бесплатно. В ЕС — €4,99.</p>
+        <ul class="bullets">
+          <li data-i18n="p2nl">NL: 0 € · 1–3 дня</li>
+          <li data-i18n="p2eu">EU: €4,99 · 3–7 дней</li>
+        </ul>
+        <div class="cta-row"><a class="btn primary" href="https://t.me/merxio_manager?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%20Universal%20Plug.%0A%D0%9A%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE%3A%20___%0A%D0%90%D0%B4%D1%80%D0%B5%D1%81%3A%20___%0A%D0%A3%D0%B4%D0%BE%D0%B1%D0%BD%D0%BE%D0%B5%20%D0%B2%D1%80%D0%B5%D0%BC%D1%8F%20%D0%B4%D0%BB%D1%8F%20%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B8%3A%20___" target="_blank" rel="noopener" data-i18n="orderTg">Оформить в Telegram</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h3 data-i18n="payTitle">Оплата</h3>
+    <p class="muted" data-i18n="payText">Перевод на банковский счёт (IBAN), Revolut/Wise, либо PayPal по договорённости. Наличными — при личной встрече.</p>
+  </section>
+
+  <section>
+    <h3 data-i18n="orderTitle">Заказать</h3>
+    <p class="muted" data-i18n="orderText">Нажмите кнопку ниже и напишите: цвет, количество, город и адрес доставки. Мы подтвердим наличие и пришлём реквизиты.</p>
+    <div class="cta-row">
+      <a class="btn primary" href="https://t.me/merxio_manager?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%20Universal%20Plug.%0A%D0%9A%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE%3A%20___%0A%D0%90%D0%B4%D1%80%D0%B5%D1%81%3A%20___%0A%D0%A3%D0%B4%D0%BE%D0%B1%D0%BD%D0%BE%D0%B5%20%D0%B2%D1%80%D0%B5%D0%BC%D1%8F%20%D0%B4%D0%BB%D1%8F%20%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B8%3A%20___" target="_blank" rel="noopener" data-i18n="ctaTg">Заказать в Telegram</a>
+      <a class="btn ghost" href="https://wa.me/0000000000" target="_blank" rel="noopener" data-i18n="ctaWa">Написать в WhatsApp</a>
+    </div>
+  </section>
+
+  <footer data-i18n="footer">© 2025 Universal Plug · Мы не собираем персональные данные на сайте. Заказы оформляются в Telegram/WhatsApp.</footer>
+</div>
+
+<script>
+// Color preview updates (mobile image)
+const colorPhoto=document.getElementById('colorPhoto');
+document.querySelectorAll('.swatch').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    if(colorPhoto) colorPhoto.src=btn.dataset.img;
+    document.querySelectorAll('.swatch').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
+// RU/UA translations
+const t={
+  ru:{
+    strap:"Тилбург: доставка в течение нескольких часов",
+    heroTitle:"Термостойкий колпак для стандартных бутылок",
+    heroDesc:"Прочный композит с металлической вставкой. Ровная тяга, не перегревается, легко чистится — отверстия можно быстро прочистить зубочисткой или иголочкой. Доставка по Нидерландам и ЕС.",
+    ctaTg:"Заказать в Telegram",
+    ctaWa:"Написать в WhatsApp",
+    whyTitle:"Почему это удобно",
+    b1:"Композит (пластик + стекловолокно) + металлическая вставка",
+    b2:"Прочный и термостойкий: не перегревается, не обжигает руки",
+    b3:"Без запаха при нагреве",
+    b4:"Универсальный: надевается на стандартные ПЭТ-бутылки 0,5–2 л",
+    b5:"Долговечный: сломать невозможно — можно только потерять",
+    b6:"Легко чистится — отверстия можно быстро прочистить зубочисткой или иголкой",
+    howTitle:"Как использовать",
+    h1:"Возьмите чистую пластиковую бутылку 0,5–2 л с горлышком стандартного диаметра.",
+    h2:"Наденьте Universal Plug на горлышко — посадка плотная и герметичная.",
+    h3:"После использования при необходимости очистите отверстия зубочисткой или иголочкой.",
+    colorsTitle:"Выберите цвет",
+    cGreen:"Зелёный", cRed:"Красный", cBlack:"Чёрный", cBlue:"Синий", cPurple:"Фиолетовый",
+    priceTitle:"Цены и доставка (Тилбург)",
+    p1name:"Один колпак — Тилбург",
+    p1ship:"Тилбург: доставка бесплатно в течение нескольких часов.",
+    p1nl:"Тилбург: личная доставка — бесплатно",
+    p1eu:"За пределы Тилбурга: доставка по договоренности",
+    p2name:"Два колпака — Тилбург",
+    p2ship:"Тилбург: доставка бесплатно в течение нескольких часов.",
+    p2nl:"Тилбург: личная доставка — бесплатно",
+    p2eu:"За пределы Тилбурга: доставка по договоренности",
+    orderTg:"Оформить в Telegram",
+    payTitle:"Оплата",
+    payText:"Перевод на банковский счёт (IBAN), Revolut/Wise, либо PayPal по договорённости. Наличными — при личной встрече.",
+    orderTitle:"Заказать",
+    orderText:"Нажмите кнопку ниже и напишите: цвет, количество, город и адрес доставки. Мы подтвердим наличие и пришлём реквизиты.",
+    footer:"© 2025 Universal Plug · Мы не собираем персональные данные на сайте. Заказы оформляются в Telegram/WhatsApp."
+  },
+  ua:{
+    strap:"Тілбург: доставка протягом кількох годин",
+    heroTitle:"Термостійкий ковпак для стандартних пляшок",
+    heroDesc:"Міцний композит із металевою вставкою. Рівна тяга, не перегрівається, легко чиститься — отвори можна швидко прочистити зубочисткою чи голкою. Доставка по Нідерландах та ЄС.",
+    ctaTg:"Замовити в Telegram",
+    ctaWa:"Написати в WhatsApp",
+    whyTitle:"Чому це зручно",
+    b1:"Композит (пластик + скловолокно) + металева вставка",
+    b2:"Міцний і термостійкий: не перегрівається, не обпікає руки",
+    b3:"Без запаху під час нагріву",
+    b4:"Універсальний: одягається на стандартні ПЕТ-пляшки 0,5–2 л",
+    b5:"Довговічний: зламати неможливо — можна лише загубити",
+    b6:"Легко чиститься — отвори можна швидко прочистити зубочисткою чи голкою",
+    howTitle:"Як користуватися",
+    h1:"Візьміть чисту пластикову пляшку 0,5–2 л зі стандартним горлечком.",
+    h2:"Надягніть Universal Plug на горлечко — посадка щільна та герметична.",
+    h3:"Після використання за потреби прочистіть отвори зубочисткою чи голкою.",
+    colorsTitle:"Обирайте колір",
+    cGreen:"Зелений", cRed:"Червоний", cBlack:"Чорний", cBlue:"Синій", cPurple:"Фіолетовий",
+    priceTitle:"Ціни та доставка (Тілбург)",
+    p1name:"Один ковпак — Тілбург",
+    p1ship:"Тілбург: доставка безкоштовно протягом кількох годин.",
+    p1nl:"Тілбург: особиста доставка — безкоштовно",
+    p1eu:"За межі Тілбурга: доставка за домовленістю",
+    p2name:"Два ковпаки — Тілбург",
+    p2ship:"Тілбург: доставка безкоштовно протягом кількох годин.",
+    p2nl:"Тілбург: особиста доставка — безкоштовно",
+    p2eu:"За межі Тілбурга: доставка за домовленістю",
+    orderTg:"Оформити в Telegram",
+    payTitle:"Оплата",
+    payText:"Переказ на банківський рахунок (IBAN), Revolut/Wise або PayPal за домовленістю. Готівкою — при особистій зустрічі.",
+    orderTitle:"Замовити",
+    orderText:"Натисніть кнопку нижче та напишіть: колір, кількість, місто й адресу доставки. Ми підтвердимо наявність і надішлемо реквізити.",
+    footer:"© 2025 Universal Plug · Ми не збираємо персональні дані на сайті. Замовлення оформлюються в Telegram/WhatsApp."
+  }
+};
+
+function setLang(lang){
+  document.documentElement.setAttribute('lang', lang==='ua'?'uk':'ru');
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key=el.getAttribute('data-i18n');
+    if(t[lang] && t[lang][key]!==undefined){ el.innerHTML=t[lang][key]; }
+  });
+  document.getElementById('btn-ru').classList.toggle('active', lang==='ru');
+  document.getElementById('btn-ua').classList.toggle('active', lang==='ua');
+  localStorage.setItem('lang', lang);
+}
+
+// init switch
+document.getElementById('btn-ru').addEventListener('click',()=>setLang('ru'));
+document.getElementById('btn-ua').addEventListener('click',()=>setLang('ua'));
+
+// initial
+setLang(localStorage.getItem('lang')||'ru');
+
+// update color preview image
+document.querySelectorAll('.swatch').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    if(colorPhoto) colorPhoto.src=btn.dataset.img;
+  });
+});
+</script>
 </body>
 </html>
