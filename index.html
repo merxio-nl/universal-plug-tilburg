@@ -57,7 +57,11 @@ ul.bullets{margin:8px 0 0 0;padding-left:18px}
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-266XDB2IJT');
+    // Enable debug to show up in GA DebugView
+    gtag('config', 'G-266XDB2IJT', { 'debug_mode': true });
+    console.log('GA tag loaded: G-266XDB2IJT');
+    // Send a test event once on load to verify delivery
+    gtag('event', 'test_page_view', { page_location: window.location.href });
   </script>
 
 </head>
