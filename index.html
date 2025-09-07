@@ -60,12 +60,15 @@ ul.bullets{margin:8px 0 0 0;padding-left:18px}
 }
 </style>
 
+
 <link rel="icon" href="./favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
 <link rel="icon" type="image/png" sizes="48x48" href="./favicon-48.png">
 <link rel="icon" type="image/png" sizes="64x64" href="./favicon-64.png">
 <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
-<link rel="manifest" href="data:application/manifest+json,{ }">
+<link rel="manifest" href="./site.webmanifest">
+<meta name="msapplication-config" content="./browserconfig.xml">
+
 </head>
 <body>
 <div class="wrap">
@@ -290,32 +293,6 @@ document.querySelectorAll('.swatch').forEach(btn=>{
     if(colorPhoto) colorPhoto.src=btn.dataset.img;
   });
 });
-</script>
-
-<script>
-(function () {
-  function trackClick(matcher, eventName) {
-    document.addEventListener('click', function (e) {
-      const a = e.target.closest('a');
-      if (!a) return;
-      const ok = (typeof matcher === 'function') ? matcher(a) : a.matches(matcher);
-      if (!ok) return;
-      if (typeof gtag === 'function') {
-        gtag('event', eventName, {
-          event_category: 'engagement',
-          event_label: a.href,
-          transport_type: 'beacon'
-        });
-      }
-      if (!a.hasAttribute('target') || a.target === '_self') {
-        e.preventDefault();
-        setTimeout(() => window.location.assign(a.href), 120);
-      }
-    }, { passive: false });
-  }
-  trackClick(a => /t\.me\/merxio_manager/i.test(a.href), 'click_telegram');
-  trackClick(a => /(wa\.me|whatsapp\.com)/i.test(a.href), 'click_whatsapp');
-})();
 </script>
 </body>
 </html>
